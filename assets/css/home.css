@@ -19,34 +19,55 @@
 @media (min-width:760px){.cab__idiomas{display:flex}}
 .cab__idiomas a[aria-current]{color:var(--ocre-texto)}
 
-/* ---------- Hero "Portal" ---------- */
-.hero{background:var(--yeso);padding-block:var(--e4) 0}
-.hero__rejilla{display:grid;gap:var(--e4)}
-@media (min-width:1000px){
-  .hero__rejilla{grid-template-columns:5fr 7fr;align-items:end;gap:var(--e5)}
+/* ---------- Hero: EL PORTAL ----------
+   La fachada a sangre ocupa la pantalla. El contenido vive dentro de
+   un arco de yeso: el portal por el que se entra a la finca.        */
+.hero{
+  position:relative;overflow:hidden;background:var(--verde-hondo);
+  min-height:calc(100svh - var(--cab-h,58px));
+  display:grid;grid-template-rows:1fr auto;
 }
-.hero__texto{display:flex;flex-direction:column;gap:var(--e3);padding-bottom:var(--e4)}
-.hero__titulo{font-family:var(--display);font-size:var(--t-display);line-height:.98;letter-spacing:-.02em}
-.hero__datos{display:flex;flex-wrap:wrap;gap:var(--e2);align-items:center}
-.hero__datos .versal{font-size:.875rem}
+.hero__fachada{position:absolute;inset:0;margin:0;overflow:hidden}
+.hero__fachada picture{display:contents}
+.hero__fachada img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.js .hero__fachada img{transform:scale(1.05);transition:transform 1100ms var(--ease-portal)}
+.js .cargada .hero__fachada img{transform:none}
+.hero__scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,rgba(28,31,28,.72) 0%,rgba(28,31,28,.34) 52%,rgba(28,31,28,.06) 100%)}
+@media (max-width:899px){
+  .hero__scrim{background:linear-gradient(to top,rgba(28,31,28,.86) 12%,rgba(28,31,28,.30) 62%)}
+}
+
+.hero__portal{
+  position:relative;z-index:3;align-self:center;min-height:0;overflow:hidden;
+  padding:var(--e5) var(--borde) var(--e4);
+}
+@media (min-width:900px){
+  .hero__portal{max-width:min(60ch,57%);padding:var(--e3) 0 var(--e3) var(--borde)}
+}
+.hero__arco{
+  --r:clamp(80px,11vw,168px);
+  background:var(--hueso);border-radius:var(--r) var(--r) 3px 3px;
+  padding:clamp(52px,7vw,104px) clamp(26px,3.4vw,48px) clamp(26px,2.6vw,38px);
+  display:grid;gap:var(--e2);justify-items:start;
+}
+.hero__op{font-family:var(--versal);font-size:.75rem;letter-spacing:.08em;color:var(--verde)}
+.hero__titulo{font-family:var(--display);font-size:var(--t-display);line-height:.98;
+  letter-spacing:-.02em;color:var(--tinta);text-wrap:balance}
+.hero__datos{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.hero__datos .versal{font-size:.8125rem}
 .hero__sep{width:4px;height:4px;background:var(--ocre);flex:none}
-.hero__acciones{display:flex;flex-wrap:wrap;gap:var(--e2)}
+.hero__cita{font-size:1rem;color:var(--grafito);max-width:40ch}
+.hero__acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 
-.hero__vano{position:relative}
-.hero__vano .arco{aspect-ratio:4/5}
-@media (min-width:1000px){.hero__vano .arco{aspect-ratio:1/1;min-height:min(76vh,660px)}}
-.hero__vano .marco{position:absolute;inset:0}
-.hero__sello{
-  position:absolute;left:var(--e3);bottom:var(--e3);z-index:2;
-  background:var(--hueso);padding:12px var(--e2);border-radius:2px;
-  display:flex;align-items:center;gap:12px;
-}
-.hero__sello .versal{font-size:.6875rem;letter-spacing:.08em}
-
-/* Línea de posicionamiento bajo el hero */
-.lema{background:var(--yeso);padding-block:var(--e4)}
-.lema__txt{font-family:var(--display);font-size:clamp(1.3rem,2.6vw,2rem);color:var(--verde);
-  display:flex;align-items:center;gap:var(--e3);flex-wrap:wrap}
+/* Pie del hero: el lema y la referencia, sobre la fachada */
+.hero__pie{position:relative;z-index:3;background:rgba(30,64,58,.90);
+  backdrop-filter:blur(4px);color:var(--hueso)}
+.hero__pie .env{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:var(--e2);padding-block:14px}
+.hero__lema{font-family:var(--display);font-size:clamp(1.05rem,1.9vw,1.5rem);
+  display:flex;align-items:center;gap:14px}
+.hero__ref{font-family:var(--versal);font-size:.75rem;letter-spacing:.08em;color:var(--ocre-texto)}
 
 /* ---------- Buscador ---------- */
 .busca{background:var(--verde-hondo);color:var(--hueso)}
@@ -99,7 +120,7 @@
 .ficha .marco{aspect-ratio:3/2}
 @media (min-width:1080px){
   .ficha:nth-child(5n+1) .marco{aspect-ratio:4/3}
-  .ficha:nth-child(5n+2) .marco{aspect-ratio:3/4}
+  .ficha:nth-child(5n+2) .marco{aspect-ratio:4/5}
 }
 .ficha__cuerpo{padding-top:var(--e2);display:flex;flex-direction:column;gap:6px;position:relative}
 .ficha__barrio{display:flex;align-items:center;gap:10px}
@@ -119,11 +140,12 @@
   grid-template-columns:repeat(2,1fr)}
 @media (min-width:720px){.barrios__rejilla{grid-template-columns:repeat(3,1fr)}}
 @media (min-width:1180px){.barrios__rejilla{grid-template-columns:repeat(6,1fr)}}
-.barrio{background:var(--hueso);padding:var(--e3);display:flex;flex-direction:column;gap:6px;
+.barrio{background:var(--hueso);padding:var(--e4) var(--e3);display:flex;flex-direction:column;gap:6px;
   transition:background var(--corta) var(--ease-portal)}
 .barrio:hover{background:var(--yeso)}
 .barrio h3{font-size:1.375rem}
-.barrio__precio{font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.barrio__precio{font-family:var(--display);font-size:clamp(1.6rem,2.4vw,2.1rem);
+  font-variant-numeric:tabular-nums;line-height:1.05;color:var(--verde)}
 .barrio__precio small{font-family:var(--ui);font-size:.75rem;color:var(--grafito)}
 .barrio__nota{font-size:.8125rem;color:var(--grafito)}
 
@@ -163,9 +185,11 @@
 .persona__pie{padding-top:var(--e2);display:grid;gap:2px}
 
 /* ---------- Reseñas ---------- */
-.op{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--e3)}
-.op__nota{font-family:var(--display);font-size:clamp(3.4rem,8vw,5.4rem);line-height:1;color:var(--ocre);
-  font-variant-numeric:tabular-nums}
+.op{display:grid;gap:var(--e2);align-items:end}
+@media (min-width:820px){.op{grid-template-columns:auto 1fr;gap:var(--e4)}}
+.op .versal{padding-bottom:12px;font-size:.875rem}
+.op__nota{font-family:var(--display);font-size:clamp(5.5rem,15vw,11rem);line-height:.78;
+  letter-spacing:-.04em;color:var(--ocre);font-variant-numeric:tabular-nums}
 .op__rejilla{display:grid;gap:var(--e3);margin-top:var(--e4);
   grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
 .op__cita{background:var(--hueso);padding:var(--e3);border-radius:2px;display:flex;
@@ -215,3 +239,14 @@
 .barra a[data-p]{background:var(--ocre);color:var(--tinta)}
 body{padding-bottom:62px}
 @media (min-width:1000px){body{padding-bottom:0}}
+
+/* Solo en captura de página completa: 100svh con ventana muy alta infla el hero */
+.captura .hero{min-height:0;height:800px}
+
+/* ---------- Cabecera de sección ---------- */
+.cabecera-seccion{display:grid;gap:var(--e2);align-items:end}
+@media (min-width:900px){
+  .cabecera-seccion{grid-template-columns:6fr 5fr;gap:var(--e5)}
+  .cabecera-seccion .lead{margin-bottom:5px}
+}
+.cabecera-seccion + *{margin-top:var(--e4)}
