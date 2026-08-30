@@ -8,7 +8,17 @@
   const quieto = captura || matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-  if (captura) $$('img[loading="lazy"]').forEach(i => i.loading = 'eager');
+  if (captura) {
+    $$('img[loading="lazy"]').forEach(i => i.loading = 'eager');
+    document.documentElement.classList.add('captura');
+  }
+  requestAnimationFrame(() => document.body.classList.add('cargada'));
+  const cabecera = $('.cab');
+  if (cabecera) {
+    const medir = () => document.documentElement.style
+      .setProperty('--cab-h', cabecera.offsetHeight + 'px');
+    medir(); addEventListener('resize', medir, { passive: true });
+  }
 
   /* ---------- Entrada al viewport ---------- */
   const entradas = $$('.entra');

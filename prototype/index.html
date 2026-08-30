@@ -47,51 +47,45 @@
 
 <!-- ============ HERO: EL PORTAL ============ -->
 <section class="hero" aria-labelledby="t-hero">
-  <div class="env hero__rejilla">
-    <div class="hero__texto">
-      <p class="versal">En venta · Trafalgar, Chamberí</p>
+  <figure class="hero__fachada">
+    <picture>
+      <source type="image/avif" sizes="100vw"
+        srcset="assets/img/hero-fachada-arapiles-480.avif 480w, assets/img/hero-fachada-arapiles-768.avif 768w, assets/img/hero-fachada-arapiles-1200.avif 1200w">
+      <img src="assets/img/hero-fachada-arapiles-1200.webp" sizes="100vw"
+        srcset="assets/img/hero-fachada-arapiles-480.webp 480w, assets/img/hero-fachada-arapiles-768.webp 768w, assets/img/hero-fachada-arapiles-1200.webp 1200w"
+        width="1067" height="800" fetchpriority="high" decoding="async"
+        alt="Fachada de finca señorial de Chamberí con balcones de forja negra y farola de fundición">
+    </picture>
+  </figure>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__portal">
+    <div class="hero__arco">
+      <p class="hero__op">En venta · Trafalgar, Chamberí</p>
       <h1 class="hero__titulo" id="t-hero">Un piso para hacerlo tuyo, en el corazón de Trafalgar</h1>
       <p class="hero__datos">
         <span class="versal">217 m²</span><span class="hero__sep"></span>
         <span class="versal">6 habitaciones</span><span class="hero__sep"></span>
         <span class="versal">1.790.000 €</span>
       </p>
-      <p class="lead">Hay pisos que se enseñan y pisos que se sienten. Este es de los segundos.</p>
-      <div class="hero__acciones">
+      <p class="hero__cita">Hay pisos que se enseñan y pisos que se sienten. Este es de los segundos.</p>
+      <p class="hero__acciones">
         <a class="btn" href="#cartera">Ver la casa</a>
         <a class="btn btn--linea" href="#valorar">¿Cuánto vale la tuya?</a>
-      </div>
-    </div>
-    <div class="hero__vano">
-      <div class="arco">
-        <figure class="marco">
-          <picture>
-            <source type="image/avif" sizes="(min-width:1000px) 55vw, 100vw"
-              srcset="assets/img/hero-fachada-arapiles-480.avif 480w, assets/img/hero-fachada-arapiles-768.avif 768w, assets/img/hero-fachada-arapiles-1200.avif 1200w">
-            <img class="marco__foto" src="assets/img/hero-fachada-arapiles-1200.webp"
-              sizes="(min-width:1000px) 55vw, 100vw"
-              srcset="assets/img/hero-fachada-arapiles-480.webp 480w, assets/img/hero-fachada-arapiles-768.webp 768w, assets/img/hero-fachada-arapiles-1200.webp 1200w"
-              width="1067" height="800" fetchpriority="high" decoding="async"
-              alt="Fachada de finca señorial de Chamberí con balcones de forja negra y farola de fundición">
-          </picture>
-        </figure>
-      </div>
-      <p class="hero__sello">
-        <span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="versal">Ref. DCH-631569</span>
       </p>
     </div>
   </div>
-</section>
 
-<div class="lema">
-  <div class="env">
-    <p class="lema__txt">
-      <span class="damero damero--grande" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      Chamberí, calle a calle. Desde 2009.
-    </p>
+  <div class="hero__pie">
+    <div class="env">
+      <p class="hero__lema">
+        <span class="damero damero--grande" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Chamberí, calle a calle. Desde 2009.
+      </p>
+      <p class="hero__ref">Ref. DCH-631569</p>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ============ BUSCADOR ============ -->
 <section class="busca" id="buscador" aria-labelledby="t-busca">
@@ -121,9 +115,7 @@
 <!-- ============ TRES PUERTAS ============ -->
 <section class="seccion seccion--hueso" aria-labelledby="t-puertas">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">Por dónde empezamos</span></p>
-    <h2 class="entra" id="t-puertas">Dinos qué necesitas</h2>
+    <div class="cabecera-seccion entra"><h2 id="t-puertas">Dinos qué necesitas</h2><p class="lead">Comprar, vender y alquilar son tres conversaciones distintas. Empieza por la tuya.</p></div>
   </div>
   <div class="env"><div class="puertas entra" data-r="1">
     <a class="puerta" href="#cartera"><h3>Quiero comprar</h3>
@@ -141,13 +133,11 @@
 <!-- ============ LA CARTERA ============ -->
 <section class="seccion" id="cartera" aria-labelledby="t-cartera">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">La cartera</span></p>
-    <div class="cartera__cabeza">
-      <h2 class="entra" id="t-cartera">Nuestra cartera en Chamberí</h2>
-      <p class="cartera__cuenta entra" data-r="1">12 casas ahora mismo</p>
+    <div class="cabecera-seccion entra">
+      <h2 id="t-cartera">Nuestra cartera en Chamberí</h2>
+      <p class="lead">Gestionamos personalmente cada vivienda que ponemos en venta o alquiler. Ni una más de las que podemos enseñar bien.</p>
     </div>
-    <p class="lead entra" data-r="1" style="margin-top:var(--e2)">Gestionamos personalmente cada vivienda que ponemos en venta o alquiler. Ni una más de las que podemos enseñar bien.</p>
+    <p class="cartera__cuenta entra" data-r="1" style="margin-top:var(--e3)">12 casas ahora mismo</p>
 
     <div class="solado__rejilla">
 
@@ -257,10 +247,10 @@
 <!-- ============ BARRIOS ============ -->
 <section class="seccion seccion--hueso" id="barrios" aria-labelledby="t-barrios">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">Chamberí, barrio a barrio</span></p>
-    <h2 class="entra" id="t-barrios">Seis barrios, seis mercados distintos</h2>
-    <p class="lead entra" data-r="1">Chamberí es uno de los mejores lugares para vivir de Madrid y también el que cuenta con mayor demanda de vivienda. Es el tercer distrito con mayor renta per cápita tras Chamartín y Barrio de Salamanca, y reúne un estilo arquitectónico único, con algunos de los edificios señoriales más bonitos de Madrid.</p>
+    <div class="cabecera-seccion entra">
+      <h2 id="t-barrios">Seis barrios, seis mercados distintos</h2>
+      <p class="lead">Chamberí es uno de los mejores lugares para vivir de Madrid y también el que cuenta con mayor demanda de vivienda. Es el tercer distrito con mayor renta per cápita tras Chamartín y Barrio de Salamanca, y reúne un estilo arquitectónico único, con algunos de los edificios señoriales más bonitos de Madrid.</p>
+    </div>
   </div>
   <div class="env"><div class="barrios__rejilla entra" data-r="2">
     <div class="barrio"><h3>Almagro</h3><p class="barrio__precio">10.503 <small>€/m²</small></p><p class="barrio__nota">El más caro del distrito. Aquí está nuestra oficina.</p></div>
@@ -279,8 +269,6 @@
 <section class="seccion valora" id="valorar" aria-labelledby="t-valorar">
   <div class="valora__fondo" aria-hidden="true"></div>
   <div class="env valora__env sobre-verde">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">Valoración</span></p>
     <div class="valora__rejilla">
       <div>
         <h2 class="entra" id="t-valorar" style="color:var(--hueso)">¿Cuánto vale tu casa en Chamberí?</h2>
@@ -304,10 +292,8 @@
 <!-- ============ EQUIPO ============ -->
 <section class="seccion" aria-labelledby="t-equipo">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">El equipo</span></p>
-    <h2 class="entra" id="t-equipo">Quiénes te van a atender</h2>
-    <p class="lead entra" data-r="1">Somos una inmobiliaria muy bien valorada por nuestros clientes gracias a un equipo dinámico, nuestro profundo conocimiento del mercado inmobiliario y del barrio de Chamberí.</p>
+    <div class="cabecera-seccion entra"><h2 id="t-equipo">Quiénes te van a atender</h2>
+    <p class="lead">Somos una inmobiliaria muy bien valorada por nuestros clientes gracias a un equipo dinámico, nuestro profundo conocimiento del mercado inmobiliario y del barrio de Chamberí.</p></div>
     <div class="equipo__rejilla">
       <div class="persona entra"><div class="persona__hueco"><span>Retrato pendiente</span></div><div class="persona__pie"><h3 style="font-size:1.125rem">Nombre y apellidos</h3><p class="versal">Cargo · Idiomas</p></div></div>
       <div class="persona entra" data-r="1"><div class="persona__hueco"><span>Retrato pendiente</span></div><div class="persona__pie"><h3 style="font-size:1.125rem">Nombre y apellidos</h3><p class="versal">Cargo · Idiomas</p></div></div>
@@ -321,8 +307,6 @@
 <!-- ============ RESEÑAS ============ -->
 <section class="seccion seccion--hueso" aria-labelledby="t-op">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">Opiniones</span></p>
     <h2 class="oculto" id="t-op">Opiniones de clientes</h2>
     <p class="op entra"><span class="op__nota">4,6</span><span class="versal">sobre 5 · 59 opiniones en Google</span></p>
     <div class="op__rejilla">
@@ -337,9 +321,7 @@
 <!-- ============ SERVICIOS ============ -->
 <section class="seccion" aria-labelledby="t-serv">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">Servicios</span></p>
-    <h2 class="entra" id="t-serv">Todo lo que rodea a una operación</h2>
+    <div class="cabecera-seccion entra"><h2 id="t-serv">Todo lo que rodea a una operación</h2><p class="lead">Tasación, financiación, fiscalidad y seguro de impago. Lo que hace falta para que una compraventa no se atasque.</p></div>
   </div>
   <div class="env"><div class="serv__rejilla entra" data-r="1">
     <div class="serv"><h3>Tasaciones</h3><p>Informe realizado por un equipo técnico experto, perfectamente argumentado. Para garantía hipotecaria, patrimonio, herencias o fusiones.</p></div>
@@ -355,8 +337,6 @@
 <!-- ============ OFICINAS ============ -->
 <section class="seccion seccion--verde sobre-verde" id="oficinas" aria-labelledby="t-ofi">
   <div class="env">
-    <p class="indice"><span class="damero" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="indice__txt">Dónde estamos</span></p>
     <h2 class="entra" id="t-ofi" style="color:var(--hueso)">Tres oficinas en Chamberí</h2>
     <div class="ofi__rejilla">
       <div class="ofi entra"><h3>Boutique Inmobiliaria</h3><p>Paseo del General Martínez Campos, 23<br>28010 Madrid · Almagro</p><p class="versal" style="color:var(--ocre-texto)">L-V 9:30–14:00 y 16:30–19:30 · Sáb 11:00–13:30</p></div>
