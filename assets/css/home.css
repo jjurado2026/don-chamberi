@@ -58,53 +58,55 @@ html.captura .ventana__marco,html.quieto .ventana__marco{clip-path:none;animatio
 html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;animation:none}
 
 /* ---------- "ATENDEMOS LAS NECESIDADES ÚNICAS…" ----------
-   Su titular y su párrafo, más lo que ya dicen de sí mismos en "Nosotros",
-   "Servicios" y el pie: años, oficinas, valores y servicios. */
+   Foto real (su ficha de Almagro) con un marco dorado desplazado, y al lado su titular,
+   sus párrafos, tres cifras suyas y su frase de valores. Los siete servicios, en una sola línea. */
 .intro{padding:var(--s6) 0;border-top:1px solid var(--linea)}
-.intro__cab{display:grid;gap:var(--s3);align-items:end}
-@media (min-width:900px){.intro__cab{grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,6vw,96px)}}
-.intro__titulo{max-width:16ch;text-wrap:balance;margin-top:14px}
-.intro__texto{font-family:var(--serif);font-size:clamp(1.15rem,1rem + .7vw,1.5rem);line-height:1.5;color:var(--tinta);font-weight:350;text-wrap:pretty}
-.intro__texto + .intro__texto{margin-top:14px;font-size:clamp(1rem,.95rem + .35vw,1.15rem);color:var(--gris)}
-.intro__valores{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;padding-top:18px;border-top:1px solid var(--linea)}
-.intro__valores li{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--marca-medio)}
-.intro__valores li::before{content:"";width:7px;height:7px;background:var(--oro);transform:rotate(45deg);flex:none}
+.intro__grid{display:grid;gap:var(--s5);align-items:center}
+@media (min-width:900px){.intro__grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,6vw,96px)}}
+.intro__figura{margin:0}
+.intro__foto{position:relative;padding:0 14px 14px 0}
+.intro__foto::before{content:"";position:absolute;inset:14px 0 0 14px;border:1px solid var(--oro);border-radius:var(--r-s);pointer-events:none}
+.intro__marco{position:relative;aspect-ratio:4/5;border-radius:var(--r-s);overflow:hidden;background:var(--marca-suave)}
+.intro__marco img{width:100%;height:100%;object-fit:cover}
+.intro__marco::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(var(--marca-rgb),.14);pointer-events:none}
+.intro__figura figcaption{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--gris)}
+.intro__texto h2{max-width:16ch;text-wrap:balance}
+.intro__lead{margin-top:22px;font-family:var(--serif);font-size:clamp(1.15rem,1rem + .7vw,1.45rem);line-height:1.5;color:var(--tinta);font-weight:350;max-width:38ch;text-wrap:pretty}
+.intro__p{margin-top:14px;font-size:1rem;line-height:1.7;color:var(--gris);max-width:60ch}
+.cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.cifra{min-width:0;padding:18px 16px 18px 0}
+.cifra + .cifra{padding-left:16px;border-left:1px solid var(--linea)}
+.cifra__num{font-family:var(--serif);font-size:clamp(1.8rem,1.3rem + 1.6vw,2.6rem);line-height:1;color:var(--marca);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cifra__num small{font-family:var(--sans);font-size:.75rem;font-weight:600;color:var(--marca-medio);margin-left:5px;letter-spacing:.04em}
+.cifra__txt{margin-top:6px;font-size:.82rem;line-height:1.4;color:var(--gris)}
+.intro__valores{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.5;color:var(--marca-medio);max-width:44ch}
+.intro__cta{margin-top:14px}
 
-.intro__cuerpo{display:grid;gap:16px;margin-top:var(--s4)}
-@media (min-width:640px){.intro__cuerpo{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1024px){.intro__cuerpo{grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,4fr)}}
+/* Los siete servicios, literales, en una línea con el damero de separador */
+.servicios{margin-top:var(--s5);padding:16px clamp(18px,3vw,32px);background:var(--marca-suave);border-radius:var(--r-m);display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.servicios__rotulo{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--marca-medio);margin-right:4px}
+.servicios ul{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0}
+.servicios li{display:inline-flex;align-items:center;font-family:var(--serif);font-size:1.05rem;color:var(--tinta);line-height:1.3}
+.servicios li + li::before{content:"";width:5px;height:5px;background:var(--oro);transform:rotate(45deg);margin:0 14px;flex:none}
+.servicios .btn--texto{margin-left:auto;min-height:36px;font-size:.9rem}
 
-/* Los hechos: números grandes en dorado sobre marrón */
-.hechos{background:var(--marca);color:#fff;border-radius:var(--r-m);padding:clamp(22px,2.5vw,32px);
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative;overflow:hidden}
-.hechos::after{content:"";position:absolute;right:-24px;bottom:-24px;width:120px;height:120px;opacity:.14;
-  background:conic-gradient(var(--oro) 25%,transparent 0 50%,var(--oro) 0 75%,transparent 0);background-size:40px 40px;pointer-events:none}
-@media (min-width:1024px){.hechos{grid-template-columns:1fr;align-content:space-between}}
-.hecho{position:relative;min-width:0;padding:0 0 0 14px;border-left:1px solid rgba(255,255,255,.16)}
-.hecho:first-child{padding-left:0;border-left:0}
-@media (min-width:1024px){
-  .hecho{padding:18px 0 0;border-left:0;border-top:1px solid rgba(255,255,255,.16)}
-  .hecho:first-child{padding-top:0;border-top:0}
+
+/* Móvil: cifras apiladas y servicios en columna */
+@media (max-width:479px){
+  .cifras{grid-template-columns:1fr;border-bottom:0}
+  .cifra{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--linea)}
+  .cifra + .cifra{padding-left:0;border-left:0}
+  .cifra__num{min-width:96px}
+  .cifra__txt{margin-top:0}
 }
-.hecho__num{font-family:var(--serif);font-size:clamp(2rem,1.2rem + 2.4vw,3.4rem);white-space:nowrap;line-height:1;color:var(--oro);font-variant-numeric:tabular-nums;font-weight:400}
-.hecho__num small{font-family:var(--sans);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.7);margin-left:6px;letter-spacing:.04em}
-.hecho__txt{margin-top:8px;font-size:.88rem;line-height:1.45;color:rgba(255,255,255,.8)}
-
-.intro__figura{margin:0;position:relative;min-height:280px;border-radius:var(--r-m);overflow:hidden;background:var(--marca-suave)}
-.intro__figura img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.intro__figura::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(var(--marca-rgb),.14);pointer-events:none}
-.intro__figura figcaption{position:absolute;left:16px;bottom:14px;display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:3px;
-  background:rgba(255,255,255,.92);color:var(--marca);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-@media (min-width:640px) and (max-width:1023px){.intro__figura{grid-column:1 / -1;min-height:320px}}
-
-/* Los siete servicios, literales de su página de Servicios */
-.servicios{background:var(--marca-suave);border-radius:var(--r-m);padding:clamp(22px,2.5vw,28px);display:flex;flex-direction:column}
-.servicios__rotulo{display:flex;align-items:center;gap:10px;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--marca-medio)}
-.servicios ul{margin-top:12px;display:flex;flex-direction:column}
-.servicios li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--linea);
-  font-family:var(--serif);font-size:1.08rem;line-height:1.3;color:var(--tinta)}
-.servicios li::after{content:"";width:6px;height:6px;background:var(--oro);transform:rotate(45deg);flex:none}
-.servicios .btn--texto{margin-top:auto;padding-top:16px;align-self:flex-start;min-height:44px}
+@media (max-width:639px){
+  .servicios{display:block}
+  .servicios ul{flex-direction:column;align-items:stretch;gap:0;margin-top:8px}
+  .servicios li{padding:7px 0;border-top:1px solid var(--linea)}
+  .servicios li::before{content:"";width:5px;height:5px;background:var(--oro);transform:rotate(45deg);margin:0 12px 0 2px;flex:none}
+  .servicios li + li::before{margin:0 12px 0 2px}
+  .servicios .btn--texto{margin:10px 0 0 -8px}
+}
 
 /* ---------- VALORACIÓN: "Le ayudamos a vender su casa en Chamberí" ----------
    Banda marrón con su texto de "Vendo casa" y un formulario de valoración. */
@@ -114,8 +116,7 @@ html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;
   -webkit-mask:radial-gradient(circle at top right,#000 20%,transparent 72%);mask:radial-gradient(circle at top right,#000 20%,transparent 72%)}
 .valora__env{position:relative;display:grid;gap:var(--s4)}
 @media (min-width:1024px){.valora__env{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:center}}
-.valora .etiqueta{color:var(--oro)}
-.valora h2{color:#fff;max-width:16ch;text-wrap:balance;margin-top:14px}
+.valora h2{color:#fff;max-width:16ch;text-wrap:balance}
 .valora__texto{font-family:var(--serif);font-size:var(--t-lead);line-height:1.5;color:rgba(255,255,255,.86);margin-top:18px;max-width:40ch;font-weight:350}
 .valora__lista{margin-top:22px;display:flex;flex-direction:column;gap:10px;max-width:46ch}
 .valora__lista li{display:flex;gap:12px;font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.82)}
@@ -229,32 +230,30 @@ html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;
 .props__pie p b{color:var(--tinta);font-weight:600}
 
 /* ---------- CHAMBERÍ, BARRIO A BARRIO: "¿Por qué vivir en Chamberí?" ----------
-   Su texto de "Nosotros" y los seis barrios del distrito. */
-.barrios{padding:var(--s6) 0;border-top:1px solid var(--linea)}
-.barrios__cab{display:grid;gap:var(--s4);align-items:center}
-@media (min-width:1024px){.barrios__cab{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px)}}
-.barrios__cab h2{margin-top:14px;max-width:16ch;text-wrap:balance}
-.barrios__texto{margin-top:18px;font-size:1.05rem;line-height:1.7;color:var(--tinta);max-width:62ch;text-wrap:pretty}
-.barrios__figura{margin:0;position:relative;aspect-ratio:4/3;border-radius:var(--r-m);overflow:hidden;background:var(--marca-suave)}
-.barrios__figura img{width:100%;height:100%;object-fit:cover}
-.barrios__figura::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(var(--marca-rgb),.14);pointer-events:none}
-.barrios__figura figcaption{position:absolute;left:16px;bottom:14px;z-index:1;display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:3px;
-  background:rgba(255,255,255,.92);color:var(--marca);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.barrios__lista{display:grid;gap:14px;margin-top:var(--s5);grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (min-width:640px){.barrios__lista{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (min-width:1024px){.barrios__lista{grid-template-columns:repeat(6,minmax(0,1fr))}}
-.barrio{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-height:156px;padding:20px 18px;
-  background:var(--marca-tinte);border:1px solid var(--linea);border-radius:var(--r-m);color:var(--tinta);
-  transition:background-color 200ms ease,color 200ms ease,border-color 200ms ease,transform 200ms var(--ease-out),box-shadow 200ms ease}
-.barrio .damero{position:absolute;top:16px;right:16px}
-.barrio__nombre{font-family:var(--serif);font-size:clamp(1.15rem,4.4vw,1.45rem);line-height:1.1;padding-right:24px;overflow-wrap:anywhere;min-width:0}
-.barrio__nombre small{display:block;font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--marca-medio);margin-top:6px}
-.barrio__dato{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:var(--gris);letter-spacing:.02em}
-.barrio__dato .ic{width:16px;height:16px;color:var(--marca);transition:transform 200ms var(--ease-out)}
-.barrio:hover,.barrio:focus-visible{background:var(--marca);color:#fff;border-color:var(--marca);transform:translateY(-3px);box-shadow:var(--sombra-2)}
-.barrio:hover .barrio__nombre small,.barrio:hover .barrio__dato{color:var(--oro)}
-.barrio:hover .barrio__dato .ic{color:var(--oro);transform:translateX(4px)}
-.barrio:hover .damero{opacity:.9}
+   Banda con su foto de Ríos Rosas y el titular encima; debajo, su texto de "Nosotros"
+   y un callejero con los seis barrios y las viviendas en cartera. */
+.barrios{padding:0 0 var(--s6)}
+.barrios__banda{position:relative;height:clamp(300px,40vw,540px);overflow:hidden;background:var(--marca)}
+.barrios__banda img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.barrios__banda::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(53,33,27,.85) 0%,rgba(53,33,27,.35) 40%,rgba(53,33,27,0) 70%)}
+.barrios__banda .env{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(28px,4vw,52px)}
+.barrios__banda h2{color:#fff;font-size:clamp(2.2rem,1.4rem + 3vw,3.6rem);max-width:14ch;text-wrap:balance}
+.barrios__pie{position:absolute;right:var(--gut);top:18px;z-index:1;font-family:var(--serif);font-style:italic;font-size:.9rem;color:rgba(255,255,255,.9);text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.barrios__cuerpo{display:grid;gap:var(--s4);margin-top:var(--s5)}
+@media (min-width:900px){.barrios__cuerpo{grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,6vw,96px);align-items:start}}
+.barrios__texto p{font-family:var(--serif);font-size:clamp(1.05rem,1rem + .35vw,1.2rem);line-height:1.55;color:var(--tinta);font-weight:350;text-wrap:pretty}
+.barrios__texto p + p{margin-top:14px}
+.callejero{border-top:1px solid var(--linea)}
+.callejero a{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:15px 6px;border-bottom:1px solid var(--linea);color:var(--tinta);
+  transition:background-color 200ms ease,color 200ms ease}
+.callejero__nombre{font-family:var(--serif);font-size:clamp(1.3rem,1.1rem + .8vw,1.7rem);line-height:1.1;transition:transform 200ms var(--ease-out)}
+.callejero__dato{font-size:.85rem;color:var(--gris);font-variant-numeric:tabular-nums;white-space:nowrap}
+.callejero .ic{width:18px;height:18px;color:var(--marca);transition:transform 200ms var(--ease-out)}
+.callejero a:hover,.callejero a:focus-visible{background:var(--marca-tinte);color:var(--marca)}
+.callejero a:hover .callejero__nombre{transform:translateX(6px)}
+.callejero a:hover .ic{transform:translateX(4px)}
+.callejero a:hover .callejero__dato{color:var(--marca-medio)}
+@media (max-width:479px){.callejero__dato{white-space:normal;font-size:.78rem}}
 
 /* ---------- NUEVAS PROPIEDADES (suscripción) ---------- */
 .suscrip{padding:var(--s6) 0;background:var(--marca-tinte);border-top:1px solid var(--linea)}
