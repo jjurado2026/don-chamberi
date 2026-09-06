@@ -103,12 +103,6 @@ strong{font-weight:600}
 .ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .ic--relleno{fill:currentColor;stroke:none}
 
-/* Etiqueta de sección: pequeña, en mayúsculas, con un filete corto */
-.etiqueta{
-  display:inline-flex;align-items:center;gap:12px;
-  font-size:var(--t-label);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--marca-medio);
-}
-.etiqueta::before{content:"";width:28px;height:2px;background:var(--oro);flex:none}
 
 /* Enlace con subrayado que se dibuja */
 .enlace{position:relative;display:inline-block;color:var(--marca);font-weight:500}
@@ -202,6 +196,8 @@ html.captura .rv,html.captura .rv-ventana,html.quieto .rv,html.quieto .rv-ventan
 @media (min-width:900px){
   .cab__tira{display:flex;align-items:center;justify-content:space-between;height:38px;font-size:.8rem;color:var(--gris);border-bottom:1px solid var(--linea)}
 }
+/* Su claim, donde ellos lo tienen: en la cabecera */
+.cab__claim{margin:0 auto;font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--marca-medio);letter-spacing:.01em}
 .redes{display:flex;align-items:center;gap:0}
 .redes a,.redes span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;color:var(--gris);
   transition:color var(--d-1) ease,background-color var(--d-1) ease,transform var(--d-2) var(--ease-out)}
@@ -295,6 +291,7 @@ html.captura .rv,html.captura .rv-ventana,html.quieto .rv,html.quieto .rv-ventan
 .menu-movil ul ul{padding:4px 0 10px 18px;border-bottom:1px solid var(--linea)}
 .menu-movil ul ul a{display:block;padding:10px 0;font-size:1.05rem;color:var(--tinta)}
 .menu-movil__pie{margin-top:auto;display:flex;flex-direction:column;gap:var(--s2)}
+.menu-movil__claim{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--marca-medio)}
 .menu-movil__idiomas{display:flex;flex-wrap:wrap;gap:8px}
 .menu-movil__idiomas a{padding:11px 16px;border:1px solid var(--linea-fuerte);border-radius:999px;font-size:.85rem}
 .menu-movil__idiomas a[aria-current="true"]{background:var(--marca);color:#fff;border-color:var(--marca)}
