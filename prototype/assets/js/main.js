@@ -12,12 +12,7 @@
   const html = document.documentElement;
   const params = new URLSearchParams(location.search);
 
-  /* ---------- Tema alternativo (?tema=marron) y modo captura (?ss) ---------- */
-  if (params.get('tema') === 'marron') {
-    html.dataset.tema = 'marron';
-    const tc = $('meta[name="theme-color"]');
-    if (tc) tc.content = '#4C3128';
-  }
+  /* ---------- Modo captura (?ss): sin animaciones, todo visible ---------- */
   const captura = params.has('ss');
   const quieto  = captura || matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (captura) html.classList.add('captura');

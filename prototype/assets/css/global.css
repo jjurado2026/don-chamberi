@@ -14,23 +14,28 @@
   font-weight:100 900;font-style:italic;font-display:swap}
 
 :root{
-  /* Color de marca: verde Madrid — el de las farolas, bancos y quioscos de fundición */
-  --marca:#1E4D3A;
-  --marca-oscuro:#143728;
-  --marca-medio:#3E7A5E;
-  --marca-suave:#E8F0EA;
-  --marca-tinte:#F4F8F5;
-  --marca-rgb:30,77,58;
+  /* Sus colores: el marrón y el dorado del escudo, sobre blanco */
+  --marca:#4C3128;
+  --marca-oscuro:#35211B;
+  --marca-medio:#85672D;   /* bronce: dorado legible sobre blanco (5:1) */
+  --oro:#E8B92B;           /* su mostaza, solo para rellenos, filetes y sellos */
+  --oro-hover:#D9A81F;
+  --oro-suave:#FBF1D3;
+  --marca-suave:#F3ECE4;
+  --marca-tinte:#F9F6F2;
+  --marca-rgb:76,49,40;
 
   --blanco:#FFFFFF;
-  --tinta:#172219;
-  --gris:#66716A;
-  --gris-claro:#7F8B84;
-  --linea:#DCE5DE;
-  --linea-fuerte:#B9C9BE;
+  --tinta:#241A16;
+  --gris:#6F655F;
+  --gris-claro:#857A73;
+  --linea:#E4DBD2;
+  --linea-fuerte:#C9BBAE;
 
   --escudo-fondo:#FFFFFF;
-  --escudo-llave:#FFFFFF;
+  --escudo-arriba:currentColor;
+  --escudo-llave:#E8B92B;
+  --escudo-damero:#E8B92B;
 
   --sombra-1:0 1px 2px rgba(var(--marca-rgb),.06),0 2px 8px -2px rgba(var(--marca-rgb),.08);
   --sombra-2:0 14px 40px -14px rgba(var(--marca-rgb),.24),0 2px 6px rgba(var(--marca-rgb),.06);
@@ -62,14 +67,6 @@
   --cab-h:65px;
 }
 @media (min-width:900px){:root{--cab-h:123px}}
-
-/* Tema alternativo: la paleta que usan hoy (marrón + mostaza) */
-html[data-tema="marron"]{
-  --marca:#4C3128;--marca-oscuro:#35211B;--marca-medio:#7E6228;
-  --marca-suave:#F3ECE4;--marca-tinte:#F9F6F2;--marca-rgb:76,49,40;
-  --tinta:#241A16;--gris:#6F655F;--gris-claro:#857A73;--linea:#E4DBD2;--linea-fuerte:#C9BBAE;
-  --escudo-llave:#E8B92B;
-}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -111,7 +108,7 @@ strong{font-weight:600}
   display:inline-flex;align-items:center;gap:12px;
   font-size:var(--t-label);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--marca-medio);
 }
-.etiqueta::before{content:"";width:28px;height:1.5px;background:currentColor;flex:none}
+.etiqueta::before{content:"";width:28px;height:2px;background:var(--oro);flex:none}
 
 /* Enlace con subrayado que se dibuja */
 .enlace{position:relative;display:inline-block;color:var(--marca);font-weight:500}
@@ -137,6 +134,8 @@ strong{font-weight:600}
 .btn--linea:hover{background:var(--marca-suave);transform:translateY(-2px)}
 .btn--blanco{background:#fff;color:var(--marca)}
 .btn--blanco:hover{background:var(--marca-suave);transform:translateY(-2px)}
+.btn--oro{background:var(--oro);color:var(--marca)}
+.btn--oro:hover{background:var(--oro-hover);transform:translateY(-2px);box-shadow:0 14px 40px -14px rgba(0,0,0,.45)}
 .btn--texto{min-height:44px;padding:0 8px;margin-left:-8px;color:var(--marca);border:0;gap:6px}
 .btn--texto:hover{color:var(--marca-oscuro);transform:none}
 .btn--texto .ic--chev{transition:transform 360ms var(--ease-out)}
@@ -194,9 +193,10 @@ html.captura .rv,html.captura .rv-ventana,html.quieto .rv,html.quieto .rv-ventan
    CABECERA — fija. Dos niveles, como la suya: tira superior
    (redes + idioma) y fila principal (logo, navegación, teléfono).
    ============================================================ */
-.cab{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.94);
+.cab{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.96);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
-html[data-tema="marron"] .cab{background:rgba(255,255,255,.96)}
+/* El filete dorado de su cabecera actual, más fino */
+.cab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--oro);opacity:.9}
 
 .cab__tira{display:none}
 @media (min-width:900px){
@@ -265,6 +265,7 @@ html[data-tema="marron"] .cab{background:rgba(255,255,255,.96)}
 }
 
 .cab__acciones{display:flex;align-items:center;gap:6px}
+@media (max-width:359px){.cab__fila{gap:10px}.logo{gap:8px}.logo__nombre{font-size:1.15rem}.logo__grupo{letter-spacing:.12em}}
 .tel{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;min-width:44px;padding:0 12px;border:1.5px solid var(--marca);border-radius:var(--r-s);
   color:var(--marca);font-weight:600;font-size:.95rem;letter-spacing:.02em;white-space:nowrap;
   font-variant-numeric:tabular-nums;
@@ -345,8 +346,9 @@ html[data-tema="marron"] .cab{background:rgba(255,255,255,.96)}
 /* ============================================================
    PIE
    ============================================================ */
-.pie{background:var(--marca);color:rgba(255,255,255,.82);--escudo-fondo:var(--marca);--escudo-llave:var(--marca);
-  padding:var(--s6) 0 var(--s4);position:relative;overflow:hidden}
+.pie{background:var(--marca);color:rgba(255,255,255,.82);
+  --escudo-fondo:#fff;--escudo-arriba:#fff;--escudo-llave:var(--marca);--escudo-damero:var(--oro);
+  padding:var(--s6) 0 var(--s4);position:relative;overflow:hidden;border-top:3px solid var(--oro)}
 .pie a{transition:color var(--d-1) ease}
 .pie a:hover{color:#fff}
 .pie .logo{color:#fff}
@@ -359,7 +361,7 @@ html[data-tema="marron"] .cab{background:rgba(255,255,255,.96)}
 @media (min-width:640px) and (max-width:1099px){.pie__marca{grid-column:1 / -1}}
 .pie__dir{font-family:var(--serif);font-size:1.15rem;line-height:1.5;color:#fff}
 .pie__dir a{font-variant-numeric:tabular-nums}
-.pie__col h3{font-family:var(--sans);font-size:var(--t-label);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:14px}
+.pie__col h3{font-family:var(--sans);font-size:var(--t-label);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--oro);margin-bottom:14px}
 .pie__col p{font-family:var(--serif);font-size:1.1rem;line-height:1.55;color:#fff}
 .pie__col p span{display:block;color:rgba(255,255,255,.72);font-size:1.02rem}
 .pie__col .redes{margin-top:14px;margin-left:-10px}

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Inmobiliaria Don Chamberí · Inmobiliaria en Chamberí</title>
 <meta name="description" content="Inmobiliaria Don Chamberí, tu mejor opción para comprar, vender o alquilar propiedades en Chamberí. Servicio personalizado y asesoramiento experto. ¡Llámanos al 910 59 30 85!">
-<meta name="theme-color" content="#1E4D3A">
+<meta name="theme-color" content="#4C3128">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Don Chamberí">
@@ -20,7 +20,7 @@
 <link rel="preload" href="assets/fonts/albert-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/global.css">
 <link rel="stylesheet" href="assets/css/home.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cpath d='M4 4h92v58c0 30-22 46-46 52C26 108 4 92 4 62Z' fill='%231E4D3A'/%3E%3Cg fill='%23fff'%3E%3Crect x='27' y='54' width='23' height='20'/%3E%3Crect x='73' y='54' width='23' height='20'/%3E%3Crect x='50' y='74' width='23' height='20'/%3E%3Crect x='27' y='94' width='23' height='20'/%3E%3Crect x='73' y='94' width='23' height='20'/%3E%3Crect x='4' y='74' width='23' height='20'/%3E%3C/g%3E%3Cg fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'%3E%3Ccircle cx='30' cy='29' r='10'/%3E%3Cpath d='M40 29h38M70 29v10M79 29v8'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 118'%3E%3Cpath d='M4 4h92v58c0 30-22 46-46 52C26 108 4 92 4 62Z' fill='%234C3128'/%3E%3Cg fill='%23E8B92B'%3E%3Crect x='27' y='54' width='23' height='20'/%3E%3Crect x='73' y='54' width='23' height='20'/%3E%3Crect x='50' y='74' width='23' height='20'/%3E%3Crect x='27' y='94' width='23' height='20'/%3E%3Crect x='73' y='94' width='23' height='20'/%3E%3Crect x='4' y='74' width='23' height='20'/%3E%3C/g%3E%3Cg fill='none' stroke='%23E8B92B' stroke-width='6' stroke-linecap='round'%3E%3Ccircle cx='30' cy='29' r='10'/%3E%3Cpath d='M40 29h38M70 29v10M79 29v8'/%3E%3C/g%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -29,8 +29,8 @@
     <defs><clipPath id="escudo-clip"><path d="M4 4h92v58c0 30-22 46-46 52C26 108 4 92 4 62Z"/></clipPath></defs>
     <g clip-path="url(#escudo-clip)">
       <rect width="100" height="118" fill="var(--escudo-fondo,#fff)"/>
-      <rect width="100" height="54" fill="currentColor"/>
-      <g fill="currentColor">
+      <rect width="100" height="54" fill="var(--escudo-arriba,currentColor)"/>
+      <g fill="var(--escudo-damero,currentColor)">
         <rect x="27" y="54" width="23" height="20"/><rect x="73" y="54" width="23" height="20"/>
         <rect x="4" y="74" width="23" height="20"/><rect x="50" y="74" width="23" height="20"/>
         <rect x="27" y="94" width="23" height="20"/><rect x="73" y="94" width="23" height="20"/>
@@ -199,16 +199,109 @@
   </div>
 </section>
 
-<!-- ============================ ATENDEMOS ============================ -->
+<!-- ============================ ATENDEMOS ============================
+     Su titular y su párrafo. El resto es suyo también: "Nosotros" (16 años, valores),
+     el pie (tres oficinas) y "Servicios" (los siete, literales). -->
 <section class="intro" aria-labelledby="titulo-intro">
   <div class="env">
-    <h2 class="intro__titulo rv" id="titulo-intro">Atendemos las necesidades únicas de cada hogar y cliente.</h2>
-    <div class="intro__cuerpo">
-      <p class="intro__texto rv" style="--i:1">Nos enfocamos en atender las demandas individuales de cada hogar y cliente a través de un estudio detallado y personalizado de cada situación</p>
-      <figure class="intro__figura rv-ventana" style="--i:2">
-        <img src="assets/img/inspeccion-tecnica-de-edificios.webp" width="700" height="394" alt="Estudio detallado sobre los planos de una vivienda" loading="lazy">
-      </figure>
+    <div class="intro__cab">
+      <div class="rv">
+        <p class="etiqueta">Nosotros</p>
+        <h2 class="intro__titulo" id="titulo-intro">Atendemos las necesidades únicas de cada hogar y cliente.</h2>
+      </div>
+      <div class="rv" style="--i:1">
+        <p class="intro__texto">Nos enfocamos en atender las demandas individuales de cada hogar y cliente a través de un estudio detallado y personalizado de cada situación</p>
+        <p class="intro__texto">Somos una agencia inmobiliaria con más de 16 años de experiencia en el sector. Especializados en el barrio de Chamberí, tenemos un perfecto conocimiento del entorno.</p>
+        <ul class="intro__valores" aria-label="Nuestros valores">
+          <li>Transparencia</li>
+          <li>Trato personalizado</li>
+          <li>Innovación</li>
+        </ul>
+      </div>
     </div>
+
+    <div class="intro__cuerpo">
+      <div class="hechos rv" style="--i:2">
+        <div class="hecho">
+          <p class="hecho__num">16<small>años</small></p>
+          <p class="hecho__txt">Más de 16 años de experiencia en el sector inmobiliario.</p>
+        </div>
+        <div class="hecho">
+          <p class="hecho__num">3<small>oficinas</small></p>
+          <p class="hecho__txt">Martínez Campos, Santa Engracia y José Abascal, en Chamberí.</p>
+        </div>
+        <div class="hecho">
+          <p class="hecho__num">4,6<small>/ 5</small></p>
+          <p class="hecho__txt">Valoración de nuestros clientes en Google, con 59 opiniones.</p>
+        </div>
+      </div>
+      <figure class="intro__figura rv-ventana" style="--i:3">
+        <img src="assets/img/inspeccion-tecnica-de-edificios.webp" width="700" height="394" alt="Estudio detallado sobre los planos de una vivienda" loading="lazy">
+        <figcaption><span class="damero" aria-hidden="true"></span>Estudio detallado de cada vivienda</figcaption>
+      </figure>
+      <div class="servicios rv" style="--i:4">
+        <p class="servicios__rotulo"><span class="damero" aria-hidden="true"></span>Servicios</p>
+        <ul>
+          <li>Tasaciones</li>
+          <li>Asesoramiento financiero</li>
+          <li>Asesoramiento jurídico</li>
+          <li>Asesoramiento fiscal</li>
+          <li>Asesoramiento energético</li>
+          <li>Cámara de Comercio Italiana</li>
+          <li>Seguros de impago de alquiler</li>
+        </ul>
+        <a class="btn btn--texto" href="https://www.inmobiliariadonchamberi.madrid/es/cms/servicios_inmobiliarios_chamberi/">Ver todos los servicios <svg class="ic ic--flecha"><use href="#i-flecha"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VALORACIÓN (sección nueva) ============================
+     Texto literal de su página "Vendo casa" y un formulario de valoración. -->
+<section class="valora" id="valoracion" aria-labelledby="titulo-valora">
+  <div class="env valora__env">
+    <div class="rv">
+      <p class="etiqueta">Confíenos su casa</p>
+      <h2 id="titulo-valora">Le ayudamos a vender su casa en Chamberí</h2>
+      <p class="valora__texto">Valoramos su casa con un método comparativo entre propiedades con similares características y en base a operaciones realizadas recientemente.</p>
+      <ul class="valora__lista">
+        <li>Nuestro modelo organizativo y de gestión nos permite tener los honorarios más ventajosos para usted, como propietario.</li>
+        <li>Realizamos campañas de Marketing e invertimos en publicidad.</li>
+        <li>Acompañamos en el proceso de compra-venta, desde el inicio hasta la escritura.</li>
+      </ul>
+      <p class="valora__tel">O llame al <a href="tel:+34910593085">910 59 30 85</a>. Estaremos encantados de hablar con usted personalmente.</p>
+    </div>
+    <form class="valora__form rv" style="--i:1" action="https://www.inmobiliariadonchamberi.madrid/es/cms/vender_casa_chamberi/" method="post" data-prototipo aria-label="Solicitar valoración">
+      <h3>Valoración de su vivienda</h3>
+      <p>Rellene el formulario y nos pondremos en contacto con usted.</p>
+      <div class="campo">
+        <label for="v-dir">Dirección de la vivienda</label>
+        <input id="v-dir" type="text" name="direccion" placeholder="Calle, número y piso" autocomplete="street-address">
+      </div>
+      <div class="valora__fila">
+        <div class="campo">
+          <label for="v-m2">Metros cuadrados</label>
+          <input id="v-m2" type="number" name="superficie" placeholder="m²" min="0" inputmode="numeric">
+        </div>
+        <div class="campo">
+          <label for="v-op">Quiero</label>
+          <select id="v-op" name="operacion"><option value="V">Vender</option><option value="A">Alquilar</option></select>
+        </div>
+      </div>
+      <div class="valora__fila">
+        <div class="campo">
+          <label for="v-nombre">Nombre</label>
+          <input id="v-nombre" type="text" name="nombre" placeholder="Nombre" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="v-tel">Teléfono</label>
+          <input id="v-tel" type="tel" name="telefono" placeholder="Teléfono" autocomplete="tel" inputmode="tel">
+        </div>
+      </div>
+      <button class="btn btn--oro" type="submit">Solicitar valoración sin coste <svg class="ic ic--flecha"><use href="#i-flecha"/></svg></button>
+      <p class="valora__nota">Sin compromiso.</p>
+      <p class="estado" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -738,6 +831,33 @@ No dudes en llamarnos y lo vamos a ver.</p><a href="https://www.inmobiliariadonc
       <p>Seleccionadas: <b>362 propiedades</b></p>
       <a class="btn btn--linea" href="https://www.inmobiliariadonchamberi.madrid/?prgr=propiedad_busc_av.php&web=100&cod_empresa=175&idioma=es&paso=1&tipo_web=2&tipo_operacion=&prioridad=4&cod_metazona=3%2C5%2C10%2C11%2C12%2C14%2C16%2C18%2C38%2C39%2C51%2C56%2C57%2C99&grupo_registros=1&num_total_props_seleccionadas=362&wth=kuku">siguiente <svg class="ic ic--flecha"><use href="#i-flecha"/></svg></a>
     </div>
+  </div>
+</section>
+
+<!-- ============================ CHAMBERÍ, BARRIO A BARRIO (sección nueva) ============================
+     Su texto de "Nosotros" ("¿Por qué vivir en Chamberí?") y los seis barrios del distrito. -->
+<section class="barrios" id="chamberi" aria-labelledby="titulo-barrios">
+  <div class="env">
+    <div class="barrios__cab">
+      <div class="rv">
+        <p class="etiqueta">Chamberí</p>
+        <h2 id="titulo-barrios">¿Por qué vivir en Chamberí?</h2>
+        <p class="barrios__texto">Chamberí es uno de los mejores lugares para vivir de Madrid y también, el que cuenta con mayor demanda de vivienda. Reúne todo lo que alguien querría tener a su disposición: colegios, hospitales, centros culturales, parques, comercios, terrazas. Además, es una zona céntrica de Madrid, con mucho comercio tradicional, buenas comunicaciones y barrios interesantes como Malasaña o Chueca muy cerca. Es el tercer distrito con mayor renta per cápita tras Chamartín y Barrio de Salamanca, y se trata de una zona que reúne un estilo arquitectónico único, con algunos de los edificios señoriales más bonitos de Madrid.</p>
+      </div>
+      <figure class="barrios__figura rv-ventana" style="--i:1">
+        <img src="assets/img/props/634216-3-800.webp" srcset="assets/img/props/634216-3-480.webp 480w, assets/img/props/634216-3-800.webp 800w, assets/img/props/634216-3-1200.webp 1200w" sizes="(min-width:1024px) 40vw, 100vw" width="1200" height="797" alt="Calle arbolada de Ríos Rosas vista desde el balcón de una vivienda" loading="lazy">
+        <figcaption><span class="damero" aria-hidden="true"></span>Ríos Rosas · Ref. DCH-634216</figcaption>
+      </figure>
+    </div>
+
+    <ul class="barrios__lista" aria-label="Los seis barrios de Chamberí">
+      <li class="rv" style="--i:0"><a class="barrio" href="#propiedades"><span class="damero" aria-hidden="true"></span><span class="barrio__nombre">Almagro<small>Chamberí</small></span><span class="barrio__dato">3 viviendas <svg class="ic"><use href="#i-flecha"/></svg></span></a></li>
+      <li class="rv" style="--i:1"><a class="barrio" href="#propiedades"><span class="damero" aria-hidden="true"></span><span class="barrio__nombre">Trafalgar<small>Chamberí</small></span><span class="barrio__dato">2 viviendas <svg class="ic"><use href="#i-flecha"/></svg></span></a></li>
+      <li class="rv" style="--i:2"><a class="barrio" href="#propiedades"><span class="damero" aria-hidden="true"></span><span class="barrio__nombre">Ríos Rosas<small>Chamberí</small></span><span class="barrio__dato">3 viviendas <svg class="ic"><use href="#i-flecha"/></svg></span></a></li>
+      <li class="rv" style="--i:3"><a class="barrio" href="#propiedades"><span class="damero" aria-hidden="true"></span><span class="barrio__nombre">Arapiles<small>Chamberí</small></span><span class="barrio__dato">1 vivienda <svg class="ic"><use href="#i-flecha"/></svg></span></a></li>
+      <li class="rv" style="--i:4"><a class="barrio" href="#propiedades"><span class="damero" aria-hidden="true"></span><span class="barrio__nombre">Gaztambide<small>Chamberí</small></span><span class="barrio__dato">1 vivienda <svg class="ic"><use href="#i-flecha"/></svg></span></a></li>
+      <li class="rv" style="--i:5"><a class="barrio" href="https://www.inmobiliariadonchamberi.madrid/es/contacto/" data-abre-contacto aria-controls="cajon-contacto" aria-expanded="false"><span class="damero" aria-hidden="true"></span><span class="barrio__nombre">Vallehermoso<small>Chamberí</small></span><span class="barrio__dato">Consúltenos <svg class="ic"><use href="#i-flecha"/></svg></span></a></li>
+    </ul>
   </div>
 </section>
 
