@@ -2,10 +2,9 @@
 
 Prototipo navegable de la homepage de **Inmobiliaria Don Chamberí** (agencia boutique en Chamberí, Madrid).
 
-Es una **remaquetación literal** de su home actual: las mismas secciones, el mismo copy y los mismos doce inmuebles en el mismo orden, con un diseño nuevo: verde y blanco, tipografía Newsreader + Albert Sans, y una secuencia de carga en la que las fotos se abren como contraventanas.
+Es una **remaquetación literal** de su home actual: las mismas secciones, el mismo copy y los mismos doce inmuebles en el mismo orden, con un diseño nuevo en sus colores (marrón, dorado y blanco), tipografía Newsreader + Albert Sans y una secuencia de carga en la que las fotos se abren como contraventanas. Se añaden dos bloques con texto de sus propias páginas: valoración ("Le ayudamos a vender su casa en Chamberí") y Chamberí barrio a barrio ("¿Por qué vivir en Chamberí?").
 
-- Tema alternativo con la paleta actual del cliente (marrón): añadir `?tema=marron` a la URL.
-- Capturas sin animaciones (para revisión): añadir `?ss`.
+- Capturas sin animaciones (para revisión): añadir `?ss` a la URL.
 
 ## Stack
 HTML, CSS y JavaScript puro. Cero dependencias, cero build. Fuentes variables autoalojadas. Imágenes WebP en tres tamaños.
