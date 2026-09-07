@@ -61,7 +61,9 @@ html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;
    Alineado con el resto de bloques: texto a la izquierda y su foto de Almagro a la derecha. */
 .intro{padding:var(--s6) 0;border-top:1px solid var(--linea)}
 .intro__grid{display:grid;gap:var(--s5);align-items:center}
-@media (min-width:900px){.intro__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(36px,6vw,96px)}}
+@media (min-width:900px){.intro__grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,80px)}}
+/* El texto, desplazado hacia el borde derecho del contenedor: no pegado a la foto */
+@media (min-width:900px){.intro__texto{max-width:600px;margin-left:auto}}
 .intro__texto h2{max-width:16ch;text-wrap:balance}
 .intro__lead{margin-top:22px;font-family:var(--serif);font-size:clamp(1.15rem,1rem + .7vw,1.45rem);line-height:1.5;color:var(--tinta);font-weight:350;max-width:38ch;text-wrap:pretty}
 .intro__p{margin-top:14px;font-size:1rem;line-height:1.7;color:var(--gris);max-width:60ch}
