@@ -41,19 +41,33 @@
     vigilar();
   }
 
-  /* ---------- Revelado al entrar en el viewport ---------- */
+  /* ---------- Revelado al entrar en el viewport ----------
+     Comprobación por geometría en scroll/resize/carga (sin IntersectionObserver):
+     nada puede quedarse oculto si un evento no llega. */
   const revelables = $$('.rv, .rv-ventana');
-  if (quieto || !('IntersectionObserver' in window)) {
+  if (quieto) {
     revelables.forEach(el => el.classList.add('visto'));
   } else {
-    const io = new IntersectionObserver((entradas, obs) => {
-      entradas.forEach(e => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('visto');
-        obs.unobserve(e.target);
+    let pendientes = revelables.slice();
+    let tic = false;
+    const revelar = () => {
+      tic = false;
+      if (!pendientes.length) return;
+      const limite = innerHeight * 0.94;
+      pendientes = pendientes.filter(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < limite && r.bottom > 0) { el.classList.add('visto'); return false; }
+        return true;
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-    revelables.forEach(el => io.observe(el));
+    };
+    const pedir = () => { if (!tic) { tic = true; requestAnimationFrame(revelar); } };
+    addEventListener('scroll', pedir, { passive: true });
+    addEventListener('resize', pedir, { passive: true });
+    addEventListener('load', pedir);
+    addEventListener('pageshow', pedir);
+    revelar();
+    setTimeout(revelar, 300);
+    setTimeout(revelar, 1200);
   }
 
   /* ---------- Desplegables (idioma, submenú, búsqueda avanzada) ----------

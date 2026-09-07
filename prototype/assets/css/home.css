@@ -58,19 +58,19 @@ html.captura .ventana__marco,html.quieto .ventana__marco{clip-path:none;animatio
 html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;animation:none}
 
 /* ---------- "ATENDEMOS LAS NECESIDADES ÚNICAS…" ----------
-   Foto real (su ficha de Almagro) con un marco dorado desplazado, y al lado su titular,
-   sus párrafos, tres cifras suyas y su frase de valores. Los siete servicios, en una sola línea. */
-.intro{padding:var(--s6) 0;border-top:1px solid var(--linea)}
-.intro__grid{display:grid;gap:var(--s5);align-items:center}
-@media (min-width:900px){.intro__grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,6vw,96px)}}
-.intro__figura{margin:0}
-.intro__foto{position:relative;padding:0 14px 14px 0}
-.intro__foto::before{content:"";position:absolute;inset:14px 0 0 14px;border:1px solid var(--oro);border-radius:var(--r-s);pointer-events:none}
-.intro__marco{position:relative;aspect-ratio:4/5;border-radius:var(--r-s);overflow:hidden;background:var(--marca-suave)}
-.intro__marco img{width:100%;height:100%;object-fit:cover}
-.intro__marco::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(var(--marca-rgb),.14);pointer-events:none}
-.intro__figura figcaption{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--gris)}
-.intro__texto h2{max-width:16ch;text-wrap:balance}
+   A ancho completo: su foto de Almagro a sangre hasta el borde izquierdo y, a la derecha,
+   su titular, sus párrafos, tres cifras suyas y su frase de valores. */
+.intro{border-top:1px solid var(--linea)}
+.intro__grid{display:grid}
+@media (min-width:900px){.intro__grid{grid-template-columns:1fr 1fr}}
+.intro__figura{margin:0;position:relative;aspect-ratio:4/5;background:var(--marca-suave);overflow:hidden}
+@media (min-width:900px){.intro__figura{aspect-ratio:auto;min-height:620px;height:100%}}
+.intro__figura img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 50%}
+.intro__figura figcaption{position:absolute;left:var(--gut);bottom:16px;font-family:var(--serif);font-style:italic;font-size:.95rem;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.intro__texto{display:flex;align-items:center;padding:clamp(40px,7vw,88px) var(--gut)}
+@media (min-width:900px){.intro__texto{padding-left:clamp(36px,5vw,80px)}}
+.intro__contenido{width:100%;max-width:calc(var(--ancho) / 2 - 40px)}
+.intro__contenido h2{max-width:16ch;text-wrap:balance}
 .intro__lead{margin-top:22px;font-family:var(--serif);font-size:clamp(1.15rem,1rem + .7vw,1.45rem);line-height:1.5;color:var(--tinta);font-weight:350;max-width:38ch;text-wrap:pretty}
 .intro__p{margin-top:14px;font-size:1rem;line-height:1.7;color:var(--gris);max-width:60ch}
 .cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
@@ -81,17 +81,6 @@ html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;
 .cifra__txt{margin-top:6px;font-size:.82rem;line-height:1.4;color:var(--gris)}
 .intro__valores{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.5;color:var(--marca-medio);max-width:44ch}
 .intro__cta{margin-top:14px}
-
-/* Los siete servicios, literales, en una línea con el damero de separador */
-.servicios{margin-top:var(--s5);padding:16px clamp(18px,3vw,32px);background:var(--marca-suave);border-radius:var(--r-m);display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
-.servicios__rotulo{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--marca-medio);margin-right:4px}
-.servicios ul{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0}
-.servicios li{display:inline-flex;align-items:center;font-family:var(--serif);font-size:1.05rem;color:var(--tinta);line-height:1.3}
-.servicios li + li::before{content:"";width:5px;height:5px;background:var(--oro);transform:rotate(45deg);margin:0 14px;flex:none}
-.servicios .btn--texto{margin-left:auto;min-height:36px;font-size:.9rem}
-
-
-/* Móvil: cifras apiladas y servicios en columna */
 @media (max-width:479px){
   .cifras{grid-template-columns:1fr;border-bottom:0}
   .cifra{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--linea)}
@@ -99,14 +88,19 @@ html.captura .ventana__marco img,html.quieto .ventana__marco img{transform:none;
   .cifra__num{min-width:96px}
   .cifra__txt{margin-top:0}
 }
-@media (max-width:639px){
-  .servicios{display:block}
-  .servicios ul{flex-direction:column;align-items:stretch;gap:0;margin-top:8px}
-  .servicios li{padding:7px 0;border-top:1px solid var(--linea)}
-  .servicios li::before{content:"";width:5px;height:5px;background:var(--oro);transform:rotate(45deg);margin:0 12px 0 2px;flex:none}
-  .servicios li + li::before{margin:0 12px 0 2px}
-  .servicios .btn--texto{margin:10px 0 0 -8px}
-}
+
+/* ---------- SERVICIOS: banda marrón con los siete servicios en rejilla ---------- */
+.servicios{background:var(--marca);color:#fff;padding:clamp(44px,6vw,72px) 0;border-top:3px solid var(--oro)}
+.servicios__cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px}
+.servicios__cab h2{color:#fff;font-size:clamp(1.9rem,1.3rem + 1.8vw,2.8rem)}
+.servicios__cab .btn--texto{color:var(--oro);margin-left:0}
+.servicios__cab .btn--texto:hover{color:#fff}
+.servicios__lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-top:clamp(20px,3vw,32px)}
+@media (min-width:640px){.servicios__lista{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:1100px){.servicios__lista{grid-template-columns:repeat(7,minmax(0,1fr));gap:0 20px}}
+.servicios__lista li{display:flex;gap:12px;align-items:flex-start;padding:18px 0 20px;border-top:1px solid rgba(255,255,255,.18);
+  font-family:var(--serif);font-size:1.12rem;line-height:1.3;color:#fff}
+.servicios__lista li::before{content:"";width:7px;height:7px;margin-top:9px;background:var(--oro);transform:rotate(45deg);flex:none}
 
 /* ---------- VALORACIÓN: "Le ayudamos a vender su casa en Chamberí" ----------
    Banda marrón con su texto de "Vendo casa" y un formulario de valoración. */
